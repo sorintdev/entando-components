@@ -110,7 +110,11 @@ public class ReplicatorWidgetAction extends SimpleWidgetConfigAction implements 
 
 	public IPage getTargetPage() {
 		if (this._targetPage == null) {
-			this._targetPage = this.getPageManager().getPage(this.getPageCodeParam());
+			if (this.getPageManager().getOnlinePage(this.getPageCodeParam()) != null) {
+			    this._targetPage = this.getPageManager().getOnlinePage(this.getPageCodeParam());
+            } else if (this.getPageManager().getDraftPage(this.getPageCodeParam()) != null) {
+                this._targetPage = this.getPageManager().getDraftPage(this.getPageCodeParam());
+            }
 		}
 		return this._targetPage;
 	}
