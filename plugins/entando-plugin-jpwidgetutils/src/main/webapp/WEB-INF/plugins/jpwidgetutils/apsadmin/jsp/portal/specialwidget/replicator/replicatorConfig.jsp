@@ -125,7 +125,7 @@
                                                                open="${treeNodeActionMarkerCode!='close'}"
                                                                targetNode="${targetNode}"
                                                                treeNodesToOpen="${treeNodesToOpen}"/>
-                                                <s:include value="include/entryPage_treeBuilder-request-linksPages.jsp"/>
+                                                <s:include value="/apsadmin/jsp/portal/include/entryPage_treeBuilder-request-linksPages.jsp"/>
                                             </s:elseif>
                                         </tbody>
                                     </table>
@@ -225,8 +225,5 @@
             $(this).addClass("active");
             $(this).find(".moveButtons").removeClass("hidden");
         });
-        <%--<s:if test="strutsAction != 2" >--%>
-        <%--generateCodeFromTitle("lang<wp:info key="defaultLang" />", 'pageCode');--%>
-        <%--</s:if>--%>
     });
 </script>

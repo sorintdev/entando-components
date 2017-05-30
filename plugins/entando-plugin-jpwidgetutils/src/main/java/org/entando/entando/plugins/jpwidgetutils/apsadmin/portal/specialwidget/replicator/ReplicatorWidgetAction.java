@@ -105,7 +105,6 @@ public class ReplicatorWidgetAction extends SimpleWidgetConfigAction implements 
 		} catch (Throwable t) {
 			_logger.error("error in selectFrame", t);
 		}
-		System.out.println("successo");
 		return SUCCESS;
 	}
 
