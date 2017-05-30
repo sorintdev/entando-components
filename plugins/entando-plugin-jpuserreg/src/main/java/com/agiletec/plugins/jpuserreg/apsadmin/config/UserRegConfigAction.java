@@ -103,7 +103,7 @@ public class UserRegConfigAction extends BaseAction {
 	}
 	
 	public boolean checkPage(String pageCode) {
-		return this.getPageManager().getPage(pageCode)!=null;
+		return this.getPageManager().getOnlinePage(pageCode)!=null;
 	}
 	
 	public boolean checkSenderCode() {
@@ -204,7 +204,7 @@ public class UserRegConfigAction extends BaseAction {
 	public List<IPage> getPages() {
 		if (this._pages==null) {
 			this._pages = new ArrayList<IPage>();
-			IPage root = this.getPageManager().getRoot();
+			IPage root = this.getPageManager().getOnlineRoot();
 			this.addPages(root, this._pages);
 		}
 		return this._pages;
@@ -229,7 +229,7 @@ public class UserRegConfigAction extends BaseAction {
 	protected List<IPage> getSystemPages(String widgetCode) throws ApsSystemException {
 		List<IPage> pages = null;
 		try {
-			pages = this.getPageManager().getWidgetUtilizers(widgetCode);
+			pages = this.getPageManager().getOnlineWidgetUtilizers(widgetCode);
 		} catch (Exception e) {
 			_logger.error("Error in getSystemPages", e);
 			pages = new ArrayList<IPage>();

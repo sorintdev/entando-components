@@ -298,9 +298,9 @@ public class UserRegManager extends AbstractService implements IUserRegManager {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		Lang lang = this.getLangManager().getLang(langcode);
-		IPage page = this.getPageManager().getPage(pageCode);
+		IPage page = this.getPageManager().getOnlinePage(pageCode);
 		if (null == page) {
-			page = this.getPageManager().getRoot();
+			page = this.getPageManager().getOnlineRoot();
 		}
 		return this.getUrlManager().createURL(page, lang, params);
 	}
