@@ -105,16 +105,13 @@ public class ReplicatorWidgetAction extends SimpleWidgetConfigAction implements 
 		} catch (Throwable t) {
 			_logger.error("error in selectFrame", t);
 		}
+		System.out.println("successo");
 		return SUCCESS;
 	}
 
 	public IPage getTargetPage() {
 		if (this._targetPage == null) {
-			if (this.getPageManager().getOnlinePage(this.getPageCodeParam()) != null) {
-			    this._targetPage = this.getPageManager().getOnlinePage(this.getPageCodeParam());
-            } else if (this.getPageManager().getDraftPage(this.getPageCodeParam()) != null) {
-                this._targetPage = this.getPageManager().getDraftPage(this.getPageCodeParam());
-            }
+			this._targetPage = this.getPageManager().getOnlinePage(this.getPageCodeParam());
 		}
 		return this._targetPage;
 	}

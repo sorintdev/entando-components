@@ -69,7 +69,7 @@
                     </label>
                     <div class="col-sm-10">
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-striped table-bordered table-hover no-mb">
                                 <thead>
                                     <tr>
                                         <th><s:text name="name.position" /></th>
