@@ -56,7 +56,7 @@
         -->
         <module>entando-plugin-jpphotogallery</module>
         <module>entando-plugin-jprssaggregator</module>
-        <!-- <module>entando-plugin-jpwidgetutils</module> -->
+        <module>entando-plugin-jpwidgetutils</module>
         <module>entando-plugin-jpversioning</module>
         <!--
         <module>entando-plugin-jpstats</module>
