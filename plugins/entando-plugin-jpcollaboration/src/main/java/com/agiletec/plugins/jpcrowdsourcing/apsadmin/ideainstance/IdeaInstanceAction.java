@@ -129,7 +129,7 @@ public class IdeaInstanceAction extends BaseAction {
 	protected Boolean isPublished() {
 		Boolean published = false;
 		try {
-			List<IPage> pages = this.getPageManager().getWidgetUtilizers(IdeaInstanceWidgetAction.WIDGET_CODE);
+			List<IPage> pages = this.getPageManager().getOnlineWidgetUtilizers(IdeaInstanceWidgetAction.WIDGET_CODE);
 			if (null != pages && !pages.isEmpty()) {
 				Iterator<IPage> it = pages.iterator();
 				while (it.hasNext()) {

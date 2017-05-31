@@ -98,7 +98,7 @@ public class NewIdeaFrontAction extends BaseAction implements ServletResponseAwa
 			if (StringUtils.isBlank(destPage)) {
 				destPage = super.getRequest().getParameter("saveidea_destpage");
 			}
-			IPage page = (null != destPage) ? this.getPageManager().getPage(destPage) : null;
+			IPage page = (null != destPage) ? this.getPageManager().getOnlinePage(destPage) : null;
 			if (null != page) {
 				IURLManager urlManager = (IURLManager) ApsWebApplicationUtils.getBean(SystemConstants.URL_MANAGER, this.getRequest());
 				RequestContext reqCtx = (RequestContext) this.getRequest().getAttribute(RequestContext.REQCTX);
@@ -127,7 +127,7 @@ public class NewIdeaFrontAction extends BaseAction implements ServletResponseAwa
 	protected String getRefirectPageCode(String instanceValue) {
 		String code = null;
 		try {
-			List<IPage> pages = this.getPageManager().getWidgetUtilizers(IdeaInstanceWidgetAction.WIDGET_CODE);
+			List<IPage> pages = this.getPageManager().getOnlineWidgetUtilizers(IdeaInstanceWidgetAction.WIDGET_CODE);
 			List<IPage> filteredPages = new ArrayList<IPage>();
 			Iterator<IPage> it = pages.iterator();
 			while (it.hasNext()) {

@@ -210,7 +210,7 @@ public class ApiIdeaInstanceInterface extends CollaborationAbstractApiInterface 
 	protected IPage getPageWithInstance(String code) {
 		IPage page = null;
 		try {
-			List<IPage> pages = this.getPageManager().getWidgetUtilizers(IdeaInstanceWidgetAction.WIDGET_CODE);
+			List<IPage> pages = this.getPageManager().getOnlineWidgetUtilizers(IdeaInstanceWidgetAction.WIDGET_CODE);
 			if (null != pages && !pages.isEmpty()) {
 				Iterator<IPage> it = pages.iterator();
 				while (it.hasNext()) {
