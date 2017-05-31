@@ -125,7 +125,7 @@
                                                                open="${treeNodeActionMarkerCode!='close'}"
                                                                targetNode="${targetNode}"
                                                                treeNodesToOpen="${treeNodesToOpen}"/>
-                                                <s:include value="/apsadmin/jsp/portal/include/entryPage_treeBuilder-request-linksPages.jsp"/>
+                                                <s:include value="/WEB-INF/apsadmin/jsp/portal/include/entryPage_treeBuilder-request-linksPages.jsp"/>
                                             </s:elseif>
                                         </tbody>
                                     </table>
@@ -195,9 +195,8 @@
         </s:if>
         <s:else>
             <div class="form-group">
-                <div class="col-xs-12 col-sm-4 col-md-3 margin-small-vertical">
-                    <wpsf:submit type="button" cssClass="btn btn-primary btn-block">
-                        <span class="icon fa fa-floppy-o"></span>&#32;
+                <div class="col-sm-12 margin-small-vertical">
+                    <wpsf:submit type="button" cssClass="btn btn-primary pull-right">
                         <s:text name="label.save"/>
                     </wpsf:submit>
                 </div>

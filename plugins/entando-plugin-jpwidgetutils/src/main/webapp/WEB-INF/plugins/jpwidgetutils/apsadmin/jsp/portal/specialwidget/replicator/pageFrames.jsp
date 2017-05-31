@@ -78,26 +78,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <s:iterator value="targetPage.showlets" var="showlet" status="rowstatus">
+                                    <s:iterator value="targetPage.getWidgets()" var="showlet" status="rowstatus">
                                         <s:set var="frames" value="targetPage.getModel().getFrames()"></s:set>
                                         <s:set var="showletType" value="#showlet.getType()"></s:set>
                                         <tr>
                                             <td class="rightText">
-                                                <s:if test="targetPage.getModel().getMainFrame() == #rowstatus.index"><img
-                                                        src="<wp:resourceURL/>administration/img/icons/16x16/emblem-important.png"
-                                                        alt="<s:text name="name.mainFrame" />: "
-                                                        title="<s:text name="name.mainFrame" />"/><s:property
-                                                        value="#rowstatus.index"/></s:if>
-                                                <s:else><s:property value="#rowstatus.index"/></s:else>
+                                                <s:property value="#rowstatus.index"/>
                                             </td>
                                             <td>
                                                 <a href="<s:url action="selectFrame" >
-                                                <s:param name="frame" value="frame"/>
-                                                <s:param name="pageCode" value="pageCode"/>
-                                                <s:param name="widgetTypeCode" value="widgetTypeCode"/>
-                                                <s:param name="pageCodeParam" value="pageCodeParam" />
-                                                <s:param name="frameIdParam" value="#rowstatus.index" />
-                                                </s:url>"><s:property value="targetPage.getModel().getFrames()[#rowstatus.index]"/>
+                                                    <s:param name="frame" value="frame"/>
+                                                    <s:param name="pageCode" value="pageCode"/>
+                                                    <s:param name="widgetTypeCode" value="widgetTypeCode"/>
+                                                    <s:param name="pageCodeParam" value="pageCodeParam" />
+                                                    <s:param name="frameIdParam" value="#rowstatus.index" />
+                                                    </s:url>"><s:property value="targetPage.getModel().getFrames()[#rowstatus.index]"/>
                                                 </a>
                                             </td>
                                             <td>
