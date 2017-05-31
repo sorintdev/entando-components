@@ -77,7 +77,7 @@ public class TestMyPortalConfigManager extends ApsPluginBaseTestCase {
 	public void testGetWidgetsToRender() throws Throwable {
 		UserDetails user = this.getUser("editorCustomers");
 		PageUserConfigBean config = this._pageUserConfigManager.getUserConfig(user);
-		IPage page = this._pageManager.getPage("jpmyportalplus_testpage");
+		IPage page = this._pageManager.getOnlinePage("jpmyportalplus_testpage");
 		CustomPageConfig pageConfig = config.getConfig().get("jpmyportalplus_testpage");
 		Widget[] widgets = this._pageUserConfigManager.getWidgetsToRender(page, pageConfig.getConfig());
 

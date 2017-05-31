@@ -273,7 +273,7 @@ public abstract class AbstractFrontAction extends BaseAction implements IFrontAc
 	}
 
 	protected IPage getCurrentPage() {
-		return this.getPageManager().getPage(this.getCurrentPageCode());
+		return this.getPageManager().getOnlinePage(this.getCurrentPageCode());
 	}
 
 	protected Lang getCurrentSessionLang() {

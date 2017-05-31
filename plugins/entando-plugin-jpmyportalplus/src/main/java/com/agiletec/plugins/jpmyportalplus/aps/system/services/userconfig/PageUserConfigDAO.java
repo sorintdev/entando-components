@@ -225,7 +225,7 @@ public class PageUserConfigDAO extends AbstractDAO implements IPageUserConfigDAO
 	}
 
 	private int getPageModelframe(String pageCode) throws ApsSystemException {
-		PageModel current = this.getPageManager().getPage(pageCode).getModel();
+		PageModel current = this.getPageManager().getOnlinePage(pageCode).getModel();
 		try {
 			return current.getFrames().length;
 		} catch (Throwable t) {
