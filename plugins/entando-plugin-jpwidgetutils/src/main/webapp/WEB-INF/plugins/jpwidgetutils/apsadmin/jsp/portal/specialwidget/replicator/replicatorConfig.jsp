@@ -116,16 +116,17 @@
                                                         display: none;
                                                     }
                                                 </style>
-                                                <s:set var="treeNodeActionMarkerCode" value="treeNodeActionMarkerCode"/>
-                                                <s:set var="targetNode" value="%{parentPageCode}"/>
-                                                <s:set var="treeNodesToOpen" value="treeNodesToOpen"/>
+                                                <s:set var="treeNodeActionMarkerCode" value="treeNodeActionMarkerCode" />
+                                                <s:set var="targetNode" value="%{#showletConfig.get('pageCodeParam')}" />
+                                                <s:set var="treeNodesToOpen" value="treeNodesToOpen" />
 
-                                                <wpsa:pageTree allowedGroups="${groupsByPermission}" var="currentRoot"
-                                                               online="false" onDemand="true"
-                                                               open="${treeNodeActionMarkerCode!='close'}"
-                                                               targetNode="${targetNode}"
-                                                               treeNodesToOpen="${treeNodesToOpen}"/>
-                                                <s:include value="/WEB-INF/apsadmin/jsp/portal/include/entryPage_treeBuilder-request-linksPages.jsp"/>
+                                                <wpsa:pageTree allowedGroups="${groupsByPermission}" var="currentRoot" online="false" onDemand="true"
+                                                               open="${treeNodeActionMarkerCode!='close'}" targetNode="${targetNode}" treeNodesToOpen="${treeNodesToOpen}" />
+                                                <s:include value="/WEB-INF/apsadmin/jsp/portal/include/entryPage_treeBuilder-request-linksPages.jsp">
+                                                    <s:param name="widgetTypeCode" value="%{showlet.type.code}"/>
+                                                    <s:param name="frameIdParam" value="%{#showletConfig.get('frameIdParam')}"/>
+                                                    <s:param name="frame"/>
+                                                </s:include>
                                             </s:elseif>
                                         </tbody>
                                     </table>
@@ -202,9 +203,7 @@
                 </div>
             </div>
         </s:else>
-
     </s:form>
-
 </div>
 
 <script>
